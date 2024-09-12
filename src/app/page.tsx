@@ -34,6 +34,9 @@ export default function Home() {
           <Modal isOpen={isOpen} onClose={closeModal} title="Sample Modal">
             <p>모달 이에요. 잘 부탁 드립니다.</p>
           </Modal>
+          <a href={"https://github.com/woojoung1217/Effective_Component/blob/main/src/components/Modal.tsx"} target="_blank">
+            github
+          </a>
         </div>
         <div className={styles.items}></div>
       </div>
