@@ -57,7 +57,7 @@ const Modal = ({ isOpen, onClose, title, children, closeOnBackdropClick = true }
         <div className={styles.modalContent}>{children}</div>
         <div className={styles.modalFooter}>
           <button onClick={onClose} className={styles.closeButton}>
-            Close
+            닫기
           </button>
         </div>
       </div>
