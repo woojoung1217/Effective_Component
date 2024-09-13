@@ -83,9 +83,32 @@
 
   - 버튼 혹은 요소에 클릭 했을 시 메시지를 보여주는 컴포넌트입니다.
 
+  ```jsx
+  // 툴팁 인터페이스
+  interface Props {
+    title: string;
+    tooltipItem: string;
+    triggerEvent?: "hover" | "click"; // 동작 방식 유연성 추가
+    position?: "top" | "bottom" | "left" | "right"; // 위치 지정 가능성 추가
+  }
+  ```
+
 - **입력 필드 (Input Field)**
 
   - 텍스트, 비밀번호 등 다양한 형태의 입력 필드를 관리하는 컴포넌트입니다.
+
+  ```jsx
+  interface InputProps {
+    name: string;
+    label: string;
+    type?: string;
+    placeholder?: string;
+    required?: boolean;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    validation?: any;
+    error?: FieldError;
+  }
+  ```
 
 - **폼 (Form)**
 
@@ -148,3 +171,11 @@
 
 4. **커스터마이징**
    - 컴포넌트를 커스터마이즈하는 방법을 안내합니다.
+
+```
+
+```
+
+```
+
+```

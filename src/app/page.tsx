@@ -57,7 +57,7 @@ export default function Home() {
         <div className={styles.items}>
           <h1> 입력 필드&폼 컴포넌트</h1>
           <MyForm />
-          <a href={"https://github.com/woojoung1217/Effective_Component/blob/main/src/components/Button.tsx"} target="_blank">
+          <a href={"https://github.com/woojoung1217/Effective_Component/blob/main/src/components/InputField.tsx"} target="_blank">
             코드
           </a>
         </div>
