@@ -5,6 +5,7 @@ import styles from "./main.module.scss";
 import Modal from "@/components/Modal";
 import { useModalStore } from "@/store/ModalStore";
 import ToolTip from "@/components/ToolTip";
+import MyForm from "@/components/MyForm";
 
 export default function Home() {
   const handleOnClick = () => {
@@ -19,7 +20,7 @@ export default function Home() {
 
       <div className={styles.components}>
         <div className={styles.items}>
-          <h1>공용 버튼 컴포넌트</h1>
+          <h1> 버튼 컴포넌트</h1>
           <Button text="Primary Button" onClick={handleOnClick} />
           <Button text="Secondary Button" variant="secondary" onClick={handleOnClick} />
           <Button text="Sucess Button" variant="succes" onClick={handleOnClick} />
@@ -30,18 +31,41 @@ export default function Home() {
           </a>
         </div>
         <div className={styles.items}>
-          <h1>공용 모달 컴포넌트</h1>
+          <h1> 모달 컴포넌트</h1>
           <Button text="Open Modal" onClick={openModal} />
           <Modal isOpen={isOpen} onClose={closeModal} title="Sample Modal">
             <p>모달 이에요. 잘 부탁 드립니다.</p>
+          </Modal>
+          <Button text="Second Modal" variant="secondary" onClick={openModal} />
+          <Modal isOpen={isOpen} onClose={closeModal} title="Sample Modal2">
+            <p>테스트 용</p>
           </Modal>
           <a href={"https://github.com/woojoung1217/Effective_Component/blob/main/src/components/Modal.tsx"} target="_blank">
             코드
           </a>
         </div>
         <div className={styles.items}>
-          <h1>공용 툴팁 컴포넌트</h1>
-          <ToolTip title="hover me!" tooltipItem="툴팁 아이템 입니다." />
+          <h1> 툴팁 컴포넌트</h1>
+          <ToolTip title="hover me!" tooltipItem="툴팁 아이템 입니다." position="top" />
+          <a href={"https://github.com/woojoung1217/Effective_Component/blob/main/src/components/ToolTip.tsx"} target="_blank">
+            코드
+          </a>
+        </div>
+      </div>
+
+      <div className={styles.components}>
+        <div className={styles.items}>
+          <h1> 입력 필드&폼 컴포넌트</h1>
+          <MyForm />
+          <a href={"https://github.com/woojoung1217/Effective_Component/blob/main/src/components/Button.tsx"} target="_blank">
+            코드
+          </a>
+        </div>
+        <div className={styles.items}>
+          <h1> 입력 폼 컴포넌트</h1>
+        </div>
+        <div className={styles.items}>
+          <h1> 모달 컴포넌트</h1>
         </div>
       </div>
     </div>
