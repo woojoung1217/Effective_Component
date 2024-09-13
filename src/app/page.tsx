@@ -4,6 +4,7 @@ import Button from "@/components/Button";
 import styles from "./main.module.scss";
 import Modal from "@/components/Modal";
 import { useModalStore } from "@/store/ModalStore";
+import ToolTip from "@/components/ToolTip";
 
 export default function Home() {
   const handleOnClick = () => {
@@ -25,7 +26,7 @@ export default function Home() {
           <Button text="Disabled Button" disabled={true} onClick={handleOnClick} />
 
           <a href={"https://github.com/woojoung1217/Effective_Component/blob/main/src/components/Button.tsx"} target="_blank">
-            github
+            코드
           </a>
         </div>
         <div className={styles.items}>
@@ -35,10 +36,13 @@ export default function Home() {
             <p>모달 이에요. 잘 부탁 드립니다.</p>
           </Modal>
           <a href={"https://github.com/woojoung1217/Effective_Component/blob/main/src/components/Modal.tsx"} target="_blank">
-            github
+            코드
           </a>
         </div>
-        <div className={styles.items}></div>
+        <div className={styles.items}>
+          <h1>공용 툴팁 컴포넌트</h1>
+          <ToolTip title="hover me!" tooltipItem="툴팁 아이템 입니다." />
+        </div>
       </div>
     </div>
   );
