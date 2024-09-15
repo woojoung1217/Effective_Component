@@ -6,6 +6,7 @@ import Modal from "@/components/Modal";
 import { useModalStore } from "@/store/ModalStore";
 import ToolTip from "@/components/ToolTip";
 import MyForm from "@/components/MyForm";
+import Link from "next/link";
 
 export default function Home() {
   const handleOnClick = () => {
@@ -62,7 +63,11 @@ export default function Home() {
           </a>
         </div>
         <div className={styles.items}>
-          <h1> 입력 폼 컴포넌트</h1>
+          <h1> 퍼널 : 설문조사 패턴</h1>
+          <Link href="/funnel">퍼널로 페이지 이동 (모바일 화면으로 봐주세요)</Link>
+          <a href={"https://github.com/woojoung1217/Effective_Component/blob/main/src/components/InputField.tsx"} target="_blank">
+            코드
+          </a>
         </div>
         <div className={styles.items}>
           <h1> 모달 컴포넌트</h1>
