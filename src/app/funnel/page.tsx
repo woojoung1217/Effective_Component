@@ -13,6 +13,8 @@ const Funnel = () => {
   const searchParams = useSearchParams();
   const step = searchParams.get("step") || "가입방식";
 
+  console.log(step);
+
   const handleNextStep = () => {
     switch (step) {
       case "가입방식":
