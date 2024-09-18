@@ -7,6 +7,8 @@ import { useModalStore } from "@/store/ModalStore";
 import ToolTip from "@/components/ToolTip";
 import MyForm from "@/components/MyForm";
 import Link from "next/link";
+import { useToastStore } from "@/store/ToastStore";
+import { ToastContainer } from "@/components/useToast";
 
 export default function Home() {
   const handleOnClick = () => {
@@ -14,6 +16,8 @@ export default function Home() {
   };
 
   const { isOpen, openModal, closeModal } = useModalStore();
+
+  const { addToast } = useToastStore();
 
   return (
     <div className={styles.Maincontainer}>
@@ -70,7 +74,31 @@ export default function Home() {
           </a>
         </div>
         <div className={styles.items}>
-          <h1> 모달 컴포넌트</h1>
+          <h1>토스트 컴포넌트 (알림)</h1>
+          <button
+            onClick={() => {
+              addToast("This is a success message", "success");
+            }}
+          >
+            Show Toast
+          </button>
+
+          <button
+            onClick={() => {
+              addToast("This is a error message", "error");
+            }}
+          >
+            Error Toast
+          </button>
+
+          <button
+            onClick={() => {
+              addToast("This is a info message", "info");
+            }}
+          >
+            Error Toast
+          </button>
+          <ToastContainer />
         </div>
       </div>
     </div>
