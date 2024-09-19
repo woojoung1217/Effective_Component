@@ -8,6 +8,7 @@ import ToolTip from "@/components/ToolTip";
 import Link from "next/link";
 import { useToastStore } from "@/store/ToastStore";
 import { ToastContainer } from "@/components/useToast";
+import MyForm from "@/components/MyForm";
 
 export default function Home() {
   const handleOnClick = () => {
@@ -60,7 +61,7 @@ export default function Home() {
       <div className={styles.components}>
         <div className={styles.items}>
           <h1> 입력 필드&폼 컴포넌트</h1>
-          {/* <MyForm /> */}
+          <MyForm />
           <a href={"https://github.com/woojoung1217/Effective_Component/blob/main/src/components/InputField.tsx"} target="_blank">
             코드
           </a>

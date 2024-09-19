@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 
 // 토스트 타입 정의
 type ToastType = "info" | "success" | "error" | "warning";
