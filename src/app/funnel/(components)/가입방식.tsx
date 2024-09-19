@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 interface 가입방식Props {
