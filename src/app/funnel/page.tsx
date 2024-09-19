@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import 가입방식 from "./(components)/가입방식";
@@ -34,11 +34,13 @@ const Funnel = () => {
 
   return (
     <div className="funnelCotainer">
-      <h2>인풋은 동작하지 않습니다 funnel 방식 test</h2>
-      {step === "가입방식" && <가입방식 onNext={handleNextStep} />}
-      {step === "주민번호" && <주민번호 onNext={handleNextStep} />}
-      {step === "집주소" && <집주소 onNext={handleNextStep} />}
-      {step === "가입성공" && <가입성공 />}
+      <Suspense fallback={<div>...loading</div>}>
+        <h2>인풋은 동작하지 않습니다 funnel 방식 test</h2>
+        {step === "가입방식" && <가입방식 onNext={handleNextStep} />}
+        {step === "주민번호" && <주민번호 onNext={handleNextStep} />}
+        {step === "집주소" && <집주소 onNext={handleNextStep} />}
+        {step === "가입성공" && <가입성공 />}
+      </Suspense>
     </div>
   );
 };
