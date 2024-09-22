@@ -182,6 +182,17 @@
 
   - 정보나 컨텐츠를 카드 형식으로 표시하는 컴포넌트입니다.
 
+  ```jsx
+  interface CardProps {
+    title: string;
+    image: string;
+    description: string;
+    link?: string;
+  }
+  ```
+
+```
+
 - **알림 (alert)**
 
   - 애플리케이션의 네비게이션을 위한 바 컴포넌트입니다.
@@ -212,3 +223,4 @@
 
 4. **커스터마이징**
    - 컴포넌트를 커스터마이즈하는 방법을 안내합니다.
+```
