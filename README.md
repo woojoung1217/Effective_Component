@@ -137,6 +137,45 @@
 
   - 선택 가능한 항목을 드롭다운 목록으로 표시하는 컴포넌트입니다.
 
+  - 개선
+    드랍다운 된 이후 내용은 잘 변경 되지만 드랍다운 밖 요소를 눌렀을 때 드랍다운이 닫히지 않는 오류가 있음
+    이를 개선하기 위해 useDetectRef hooks 을 구현
+
+  ```jsx
+        /\*_ ref 외부 요소를 눌렀을 때 드랍다운을 닫도록 도와주는 함수 _/
+
+    const useDetectRef = (ref: RefObject<HTMLElement>): [boolean, React.Dispatch<React.SetStateAction<boolean>>] => {
+      // dom object인 ref 를 인수로 받아온다
+    const [isOpen, setIsOpen] = useState(false);
+     // 열림상태 default = false
+
+        useEffect(() => {
+        // 화면에 클릭 요소가 일어나면
+        const handleClick = (e: MouseEvent): void => {
+        if (ref.current && !ref.current.contains(e.target as Node)) {
+          // 현재 ref요소가 있고 클릭된 요소를 비교해서 포함하고 있지 않으면
+        setIsOpen(!isOpen);
+          // 화면을 닫도록 => 화면 밖을 누른다는 의미
+        }
+        };
+
+        if (isOpen) {
+          window.addEventListener("click", handleClick);
+          // 이벤트 등록
+        }
+
+        return () => {
+          window.removeEventListener("click", handleClick);
+        };
+
+    }, [isOpen, ref]);
+
+    return [isOpen, setIsOpen];
+    };
+
+    export default useDetectRef;
+  ```
+
 - **카드 (Card)**
 
   - 정보나 컨텐츠를 카드 형식으로 표시하는 컴포넌트입니다.

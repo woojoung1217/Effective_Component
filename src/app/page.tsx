@@ -8,6 +8,8 @@ import ToolTip from "@/components/ToolTip";
 // import Link from "next/link";
 import { useToastStore } from "@/store/ToastStore";
 import { ToastContainer } from "@/components/useToast";
+import Link from "next/link";
+import DropDown from "@/components/DropDown";
 
 export default function Home() {
   const handleOnClick = () => {
@@ -66,7 +68,7 @@ export default function Home() {
         </div>
         <div className={styles.items}>
           <h1> 퍼널 : 설문조사 패턴</h1>
-          {/* <Link href="/funnel">퍼널로 페이지 이동 (모바일 화면으로 봐주세요)</Link> */}
+          <Link href="/funnel">퍼널로 페이지 이동 (모바일 화면으로 봐주세요)</Link>
           <a href={"https://github.com/woojoung1217/Effective_Component/blob/main/src/components/InputField.tsx"} target="_blank">
             코드
           </a>
@@ -97,6 +99,19 @@ export default function Home() {
             Error Toast
           </button>
           <ToastContainer />
+        </div>
+      </div>
+
+      <div className={styles.components}>
+        <div className={styles.items}>
+          <h1> 드롭다운 컴포넌트 </h1>
+          <DropDown />
+        </div>
+        <div className={styles.items}>
+          <h1> Ex </h1>
+        </div>
+        <div className={styles.items}>
+          <h1> Ex</h1>
         </div>
       </div>
     </div>
