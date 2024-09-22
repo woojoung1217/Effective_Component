@@ -176,6 +176,8 @@
     export default useDetectRef;
   ```
 
+  이 후 옵션의 갯수가 유동적으로 변할 수 있어 사용 하는 부분에서 options 프롭을 string [] 로 받도록 변경
+
 - **카드 (Card)**
 
   - 정보나 컨텐츠를 카드 형식으로 표시하는 컴포넌트입니다.
