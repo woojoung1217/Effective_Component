@@ -20,6 +20,10 @@ export default function Home() {
 
   const { addToast } = useToastStore();
 
+  // 드랍다운 속성
+
+  const options = ["옵션 1", "옵션 2", "옵션 3", "옵션 4"];
+
   return (
     <div className={styles.Maincontainer}>
       <div className={styles.title}>더 가치있는 컴포넌트 만들기</div>
@@ -105,7 +109,7 @@ export default function Home() {
       <div className={styles.components}>
         <div className={styles.items}>
           <h1> 드롭다운 컴포넌트 </h1>
-          <DropDown />
+          <DropDown options={options} />
         </div>
         <div className={styles.items}>
           <h1> Ex </h1>
